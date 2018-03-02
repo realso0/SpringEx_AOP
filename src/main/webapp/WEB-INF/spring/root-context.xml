@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.3.xsd">
+	
+	<!-- Root Context: defines shared resources visible to all other web components -->
+	<!-- 자바 쪽 코드 관리는 root-context에서 관리 -->
+	<context:component-scan base-package="kr.co.shj.dao" /> <!-- 빈을 만들어주었으므로, Spring에 의해 관리가 된다는 표시인 S표시가 프로젝트에 생김 -->
+	<context:component-scan base-package="kr.co.shj.service" />
+	<context:component-scan base-package="kr.co.shj.service2" />
+	
+	<!-- AOP 설정 -->
+	<aop:aspectj-autoproxy></aop:aspectj-autoproxy> <!-- 프록시를 알아서 만들어주는 과정 -->
+	<context:component-scan base-package="kr.co.shj.aop"></context:component-scan> <!-- 빈을 만들ㅇ -->
+	
+	
+	
+</beans>
